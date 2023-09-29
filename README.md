@@ -11,6 +11,7 @@
 ## Question 2). Let’s say you’re a Product Data Scientist at Instagram. How would you measure the success of the Instagram TV product?
 
 > * In determining the success rate of Instagram TV products, some of the metrics I would use are:
+>   
        * The number of views that the product has generated. Higher views relate to success
        * I would also use the number of likes and comments that the product has generated. This is an engagement metric. The more engagement the better the performance
        * Another key metric would be the number of returning users. How many users came back to interact with the product again?
