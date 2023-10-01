@@ -6,38 +6,38 @@
 >   
 > * Given the data about the customers who left and the items they bought, along with their tendencies. This would be retrieved from the data set given after cleaning and feature engineering. I would use these factors as key labels in the analysis of the data that would be provided.
 
-        # Import the libraries
-        import pandas as pd
-        import numpy as np
-        import matplotlib.pyplot as plt
-        import seaborn as sns
-        
-        # Load the data
-        df = pd.read_csv('customer_churn.csv')
-        
-        # Clean the data
-        # Here you can perform data cleaning operations, such as handling missing values, removing duplicates, and data type conversions.
-        # Remove rows with missing values
-        df.dropna(inplace=True)
-        
-        # Remove duplicate rows
-        df.drop_duplicates(inplace=True)
-        
-        # Convert a column to a different data type, e.g., 'TotalCharges' to float
-        df['TotalCharges'] = df['TotalCharges'].astype(float)
-        
-        # Engineer features
-        # Feature engineering involves creating new features from existing ones or transforming existing features.
-        # Calculate the ratio of 'TotalCharges' to 'MonthlyCharges'
-        df['ChargesRatio'] = df['TotalCharges'] / df['MonthlyCharges']
-        
-        # Create a binary feature indicating whether a customer has a long-term contract
-        df['IsLongTermContract'] = df['Contract'].apply(lambda x: 1 if x == 'Two year' else 0)
-        
-        # You can add more feature engineering steps based on your specific dataset and objectives.
-        
-        # Save the cleaned and engineered DataFrame to a new CSV file if needed
-        df.to_csv('cleaned_and_engineered_data.csv', index=False)
+                # Import the libraries
+                import pandas as pd
+                import numpy as np
+                import matplotlib.pyplot as plt
+                import seaborn as sns
+                
+                # Load the data
+                df = pd.read_csv('customer_churn.csv')
+                
+                # Clean the data
+                # Here you can perform data cleaning operations, such as handling missing values, removing duplicates, and data type conversions.
+                # Remove rows with missing values
+                df.dropna(inplace=True)
+                
+                # Remove duplicate rows
+                df.drop_duplicates(inplace=True)
+                
+                # Convert a column to a different data type, e.g., 'TotalCharges' to float
+                df['TotalCharges'] = df['TotalCharges'].astype(float)
+                
+                # Engineer features
+                # Feature engineering involves creating new features from existing ones or transforming existing features.
+                # Calculate the ratio of 'TotalCharges' to 'MonthlyCharges'
+                df['ChargesRatio'] = df['TotalCharges'] / df['MonthlyCharges']
+                
+                # Create a binary feature indicating whether a customer has a long-term contract
+                df['IsLongTermContract'] = df['Contract'].apply(lambda x: 1 if x == 'Two year' else 0)
+                
+                # You can add more feature engineering steps based on your specific dataset and objectives.
+                
+                # Save the cleaned and engineered DataFrame to a new CSV file if needed
+                df.to_csv('cleaned_and_engineered_data.csv', index=False)
 
 
 >  * The next step would be to split this data to obtain a set I can train on and a set that I would test on called a held-out set.
